@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 import { Component } from 'react';
 
 class Form extends Component {
@@ -15,9 +14,6 @@ class Form extends Component {
     name: '',
     number: '',
   };
-
-  nameId = nanoid();
-  numberId = nanoid();
 
   handleChange = ({ target }) => {
     const { value, name } = target;
@@ -39,16 +35,15 @@ class Form extends Component {
   }
 
   render() {
-    const { handleSubmit, handleChange, nameId, numberId } = this;
+    const { handleSubmit, handleChange } = this;
     const { name, number } = this.state;
 
     return (
       <div>
         <form onSubmit={handleSubmit}>
-          <label htmlFor={nameId}>Name</label>
+          <label htmlFor="name">Name</label>
           <input
             onChange={handleChange}
-            id={nameId}
             type="text"
             name="name"
             value={name}
@@ -57,10 +52,9 @@ class Form extends Component {
             required
           />
 
-          <label htmlFor={numberId}>Number</label>
+          <label htmlFor="number">Number</label>
           <input
             onChange={handleChange}
-            id={numberId}
             type="tel"
             name="number"
             value={number}

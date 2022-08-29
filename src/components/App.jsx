@@ -17,6 +17,8 @@ class App extends Component {
   };
 
   addContact = items => {
+    console.log('addContact');
+
     if (this.isDublicate(items)) {
       return alert(
         `${items.name}: ${items.number} contact already in your list`
