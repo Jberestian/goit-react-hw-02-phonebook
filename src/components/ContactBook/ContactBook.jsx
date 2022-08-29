@@ -23,9 +23,9 @@ export default ContactBook;
 ContactBook.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.number.isRequired,
-      number: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
   removeContact: PropTypes.func.isRequired,
